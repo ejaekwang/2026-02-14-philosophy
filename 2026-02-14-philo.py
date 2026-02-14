@@ -8,13 +8,11 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 # 🔑 API 키 환경변수 불러오기
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ELEVEN_API_KEY = os.getenv("ELEVEN_API_KEY")
 
 # OpenAI 연결
-client = OpenAI(api_key=OPENAI_API_KEY)
-print(OPENAI_API_KEY)
-print(ELEVEN_API_KEY)
+client = OpenAI(api_key="sk-proj-8f93ksd8f9sd8f9sd8f9sd8f9sd8")
+
 
 TOPIC = "철학이란 무엇인가?"
 
@@ -40,24 +38,10 @@ with open("script.txt", "w", encoding="utf-8") as f:
     f.write(script_text)
 
 # 2️⃣ ElevenLabs 음성 생성
-# voice_url = "https://api.elevenlabs.io/v1/text-to-speech/VOICE_ID"
 
 # headers = {
 #   "xi-api-key": ELEVEN_API_KEY,
-#    "Content-Type": "application/json"
-# }
-
-# data = {
-#    "text": script_text,
-#    "voice_settings": {
-#        "stability": 0.5,
-#        "similarity_boost": 0.8
-#    }
-# }
-
-# response = requests.post(voice_url, json=data, headers=headers)
-
-# with open("voice.mp3", "wb") as f:
+#    "Content-
 #    f.write(response.content)
 
 # 3️⃣ 영상 합성 (background.mp4 준비 필요)
